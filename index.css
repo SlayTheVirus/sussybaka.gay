@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+.imgbox {
+  display: grid;
+  height: 100%;
+}
+.center-fit {
+  max-width: 100%;
+  max-height: 100vh;
+  margin: auto;
+  user-select: none;
+}
+
+.imgbox {
+  display: grid;
+  height: 100%;
+}
+
+.imgbox:active {
+  -webkit-animation: blurAnim 350ms;
+}
+
+@-webkit-keyframes bgColorInvert {
+  0% { background-color:(#ffffff);}
+  50% { background-color:(#000000);}
+  100% { background-color:(#ffffff);}
+  }
+
+@-webkit-keyframes blurAnim {
+  0% { -webkit-filter: blur(0px);}
+  25% { -webkit-filter: blur(50px);}
+  50% { -webkit-filter: blur(10px);}
+  100% { -webkit-filter: blur(0px);}
+}
