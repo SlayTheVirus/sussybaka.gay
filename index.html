@@ -29,15 +29,20 @@
       var text = new Audio('audio/text.mp3');
       text.play();
     }
+    
+    function amongUs() {
+      var amongUsSound = new Audio('audio/amongus.mp3');
+      amongUsSound.play();
+    }
   </script>
   <script type="text/javascript">
-  var pattern = ['s', 'u', 's', 's', 'y', ' ', 'b', 'a', 'k', 'a'];
+  var twit = ['s', 'u', 's', 's', 'y', ' ', 'b', 'a', 'k', 'a'];
   var current = 0;
   
   var keyHandler = function (event) {
   
     // If the key isn't in the pattern, or isn't the current key in the pattern, reset
-    if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
+    if (twit.indexOf(event.key) < 0 || event.key !== twit[current]) {
       current = 0;
       return;
     }
@@ -46,15 +51,22 @@
     current++;
   
     // If complete, alert and reset
-    if (pattern.length === current) {
+    if (twit.length === current) {
       current = 0;
       document.location.href = 'https://twitter.com/SlayVirus_Dev'
-    }
+    };
   
   };
   
   // Listen for keydown events
   document.addEventListener('keydown', keyHandler, false);
+
+// Listen for middle mouse click
+window.addEventListener('mousedown', (event) => {
+   if (event.button == 1 || event.buttons == 4) {
+      amongUs();
+   }
+});
   </script>
     <div class="imgbox" onclick="boom();">
       <img class="center-fit" src="img/sussy.png" draggable="false">
